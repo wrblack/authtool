@@ -57,8 +57,6 @@
                     </li>
                     <li><a href="attendance.php">Attendance</a>
                     </li>
-                    <li><a href="beacons.php">Beacons</a>
-                    </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
                     <li><a href="#">Help</a>
@@ -79,8 +77,6 @@
                     </li>
                     <li class="active"><a href="attendance.php">Attendance<span class="sr-only">(current)</span></a>
                     </li>
-                    <li><a href="beacons.php">Beacons</a>
-                    </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
                     <li><a href="#">Help</a>
@@ -96,55 +92,8 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1 class="page-header">Dashboard</h1>
                 <div class="jumbotron">
-                    <h2 style="text-align: center;">Welcome to your dashboard, <?php echo $name; ?>!</h2>
-                    <br>
-                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-clemson">Courses</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-clemson">Attendance</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-clemson">Beacons</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-clemson">Profile</button>
-                        </div>
-                    </div>
+
                 </div>
-                <!-- Could be used but not here
-                <h2 class="sub-header">Section title</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1,001</td>
-                                <td>Lorem</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                            </tr>
-                            <tr>
-                                <td>1,002</td>
-                                <td>amet</td>
-                                <td>consectetur</td>
-                                <td>adipiscing</td>
-                                <td>elit</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-             -->
             </div>
         </div>
     </div>

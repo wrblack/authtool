@@ -57,8 +57,6 @@
                     </li>
                     <li><a href="attendance.php">Attendance</a>
                     </li>
-                    <li><a href="beacons.php">Beacons</a>
-                    </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
                     <!-- nice but not needed
@@ -95,8 +93,6 @@
                     </li>
                     <li><a href="attendance.php">Attendance</a>
                     </li>
-                    <li><a href="beacons.php">Beacons</a>
-                    </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
                     <li><a href="#">Help</a>
@@ -120,9 +116,6 @@
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-clemson">Attendance</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-clemson">Beacons</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-clemson">Profile</button>

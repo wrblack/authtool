@@ -66,8 +66,6 @@
                     </li>
                     <li><a href="attendance.php">Attendance</a>
                     </li>
-                    <li><a href="beacons.php">Beacons</a>
-                    </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
                     <li><a href="#">Help</a>
@@ -87,8 +85,6 @@
                     <li><a href="courses.php">Courses</a>
                     </li>
                     <li><a href="attendance.php">Attendance</a>
-                    </li>
-                    <li><a href="beacons.php">Beacons</a>
                     </li>
                     <li class="active"><a href="profile.php">Profile<span class="sr-only">(current)</span></a>
                     </li>

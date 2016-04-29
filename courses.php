@@ -69,8 +69,6 @@
                     </li>
                     <li><a href="attendance.php">Attendance</a>
                     </li>
-                    <li><a href="beacons.php">Beacons</a>
-                    </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
                     <li><a href="#">Help</a>
@@ -90,8 +88,6 @@
                     <li class="active"><a href="#">Courses<span class="sr-only">(current)</span></a>
                     </li>
                     <li><a href="attendance.php">Attendance</a>
-                    </li>
-                    <li><a href="beacons.php">Beacons</a>
                     </li>
                     <li><a href="profile.php">Profile</a>
                     </li>
@@ -134,23 +130,55 @@
                         </tbody>
                     </table>
                  </div>
+                 <hr>
+                 <input class="btn btn-primary btn-clemson" value="Refresh" role="button" onClick="window.location.reload()">
+                 <button type="button" name="button" class="btn btn-clemson btn-primary"
+                        data-toggle="modal" data-target="#addModal">Add</button>
+                        <div class="modal fade" id="addModal" role="dialog">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
 
-                 <div class="jumbotron">
-                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                        <div class="btn-group" role="group">
-                             <button type="button" class="btn btn-clemson">Refresh</button>
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Add a course</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                   <div class="form-group">
+                                      <label for="inputID">Course Name</label>
+                                      <input type="text" name="id" class="form-control" id="InputID" placeholder="course 101" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputID">Course ID</label>
+                                      <input type="text" name="id" class="form-control" id="InputID" placeholder="11111111111" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputID">Course Professor ID</label>
+                                      <input type="text" name="id" class="form-control" id="InputID" placeholder="111111111" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputID">Days out of the week</label>
+                                      <input type="text" name="id" class="form-control" id="InputID" placeholder="1" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputID">Time Length</label>
+                                      <input type="text" name="id" class="form-control" id="InputID" placeholder="01:00:00" required>
+                                  </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+
+                              </div>
+                           </div>
                         </div>
-                        <div class="btn-group" role="group">
-                             <button type="button" class="btn btn-clemson">Add Course</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                             <button type="button" class="btn btn-clemson">Edit Course</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                             <button type="button" class="btn btn-clemson">Delete Course</button>
-                        </div>
-                     </div>
-                 </div>
+              <!--
+                 <a class="btn btn-primary btn-clemson" href="add_course.php" role="button">Add</a>
+                 <a class="btn btn-primary btn-clemson" href="delete_courses.php" role="button">Delete</a>
+              -->
+
                  <!-- <?php if ($id) print_r($row); else echo "no id"; ?> -->
         </div>
     </div>
