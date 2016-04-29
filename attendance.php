@@ -1,4 +1,5 @@
 <?php
+   include_once 'db_config.php';
    session_start();
    /* below pulls username from session superglobal.
       it would be more user friendly to pull the name
@@ -9,6 +10,18 @@
    } else {
       $name="VISITOR";
    }
+
+   //use idStudent to look up its attendance
+   if (!isset($_SESSION['userid'])) die("userid not set");
+   $id = $_SESSION['userid'];
+
+   //poll attendance row
+   $att_query = "SELECT idCourse, classDate, present FROM `attendance` WHERE `idStudent`='$id'";
+   if ($result = $connection->query($att_query)) {
+      $row = mysqli_fetch_assoc($result);
+      $result->free();
+   }
+   if ($row['present'] == 1) $attended = "Attended";
 ?>
 
 <!DOCTYPE html>
@@ -91,9 +104,27 @@
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1 class="page-header">Dashboard</h1>
-                <div class="jumbotron">
-
-                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Course ID</th>
+                                <th>Class Day</th>
+                                <th>Present</th>
+                            </tr>
+                        </thead>
+                        <!-- to do: make php function that goes through coure info -->
+                        <tbody>
+                            <tr>
+                                <td><?php ?>1</td>
+                                <td><?php echo $row['idCourse']; ?></td>
+                                <td><?php echo $row['classDate']; ?></td>
+                                <td><?php echo $attended; ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@
    $id = $_SESSION['userid'];
 
    //get course information
-   $course_query = "SELECT * FROM `course` WHERE idStudent = '$id';";
+   $course_query = "SELECT * FROM `course` WHERE `idStudent` = '$id'";
    if ($result = $connection->query($course_query)) {
       $row = mysqli_fetch_assoc($result);
       $result->free();
