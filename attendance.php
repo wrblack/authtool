@@ -16,12 +16,14 @@
    $id = $_SESSION['userid'];
 
    //poll attendance row
+   $attend_row = array();
    $att_query = "SELECT idCourse, classDate, present FROM `attendance` WHERE `idStudent`='$id'";
    if ($result = $connection->query($att_query)) {
-      $row = mysqli_fetch_assoc($result);
+      while ($row = mysqli_fetch_assoc($result)) {
+         $attend_row[] = $row;
+      }
       $result->free();
    }
-   if ($row['present'] == 1) $attended = "Attended";
 ?>
 
 <!DOCTYPE html>
@@ -95,12 +97,6 @@
                     <li><a href="#">Help</a>
                     </li>
                 </ul>
-                <!-- Extra Nav Sidebar items
-                <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item</a>
-                    </li>
-                </ul>
-                -->
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1 class="page-header">Dashboard</h1>
@@ -115,20 +111,29 @@
                             </tr>
                         </thead>
                         <!-- to do: make php function that goes through coure info -->
-                        <tbody>
-                            <tr>
-                                <td><?php ?>1</td>
-                                <td><?php echo $row['idCourse']; ?></td>
-                                <td><?php echo $row['classDate']; ?></td>
-                                <td><?php echo $attended; ?></td>
-                            </tr>
-                        </tbody>
+                        <?php
+                         echo "<tbody>";
+                         for ($i=0; $i < sizeof($attend_row); $i++) {
+                             echo "<tr>";
+                                 echo "<td>"; echo $i+1;                            echo "</td>";
+                                 echo "<td>"; print_r($attend_row[$i]['idCourse']); echo "</td>";
+                                 echo "<td>"; print_r($attend_row[$i]['classDate']);echo "</td>";
+                                 echo "<td>"; print_r($attend_row[$i]['present']);  echo "</td>";
+                             echo "</tr>";
+                         }
+                         echo "</tbody>";
+                         ?>
                     </table>
                  </div>
+                 <!--
+                 <?php echo "<pre>"; print_r($attend_row); echo "</pre>";
+                        print_r($attend_row[0]['present']); echo "<br>";
+                        print_r($attend_row[0]['idCourse']); echo "<br>";
+                        if ((int)$attend_row[0]['present'] == "1") echo "<br>Attended!<br>";
+                  ?> -->
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

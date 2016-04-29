@@ -16,11 +16,15 @@
    $id = $_SESSION['userid'];
 
    //get course information
+   $courses = array();
    $course_query = "SELECT * FROM `course` WHERE `idStudent` = '$id'";
    if ($result = $connection->query($course_query)) {
-      $row = mysqli_fetch_assoc($result);
+      while($row = mysqli_fetch_array($result)) {
+         $courses[] = $row;
+      }
       $result->free();
    }
+   $courseArrayLen = count($courses);
 ?>
 
 <!DOCTYPE html>
@@ -118,20 +122,27 @@
                             </tr>
                         </thead>
                         <!-- to do: make php function that goes through coure info -->
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><?php echo $row['className']; ?></td>
-                                <td><?php echo $row['idCourse']; ?></td>
-                                <td><?php echo $row['idProfessor']; ?></td>
-                                <td><?php echo $row['dayOfWeek']; ?></td>
-                                <td><?php echo $row['timeSlot']; ?></td>
-                            </tr>
-                        </tbody>
+                        <?php
+                           //i - number of courses
+                           //j - the 6 columns
+                           echo "<tbody>";
+                           for ($i=0; $i < $courseArrayLen; $i++) {
+                              echo "<tr>";
+                              echo "<td>"; echo $i+1;                            echo "</td>";
+                              echo "<td>"; print_r($courses[$i]['className']);   echo "</td>";
+                              echo "<td>"; print_r($courses[$i]['idCourse']);    echo "</td>";
+                              echo "<td>"; print_r($courses[$i]['idProfessor']); echo "</td>";
+                              echo "<td>"; print_r($courses[$i]['dayOfWeek']);   echo "</td>";
+                              echo "<td>"; print_r($courses[$i]['timeSlot']);    echo "</td>";
+                              echo "</tr>";
+                           }
+                           echo "</tbody>";
+                           ?>
                     </table>
                  </div>
                  <hr>
                  <input class="btn btn-primary btn-clemson" value="Refresh" role="button" onClick="window.location.reload()">
+                 <!-- an idea that required jquery and I sadly don't have time to implement it
                  <button type="button" name="button" class="btn btn-clemson btn-primary"
                         data-toggle="modal" data-target="#addModal">Add</button>
                         <div class="modal fade" id="addModal" role="dialog">
@@ -174,12 +185,14 @@
                               </div>
                            </div>
                         </div>
-              <!--
+                     -->
                  <a class="btn btn-primary btn-clemson" href="add_course.php" role="button">Add</a>
-                 <a class="btn btn-primary btn-clemson" href="delete_courses.php" role="button">Delete</a>
+                 <br><br>
+                 <!--
+                 <?php echo "<pre>"; print_r($courses); echo "</pre>"; ?>
+                 <?php echo "<br>elements in array courses: " . count($courses); ?>
+                 <?php echo "<br><br>courses[0][0]:"; print_r($courses[0][0]); ?>
               -->
-
-                 <!-- <?php if ($id) print_r($row); else echo "no id"; ?> -->
         </div>
     </div>
 
