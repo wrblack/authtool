@@ -1,0 +1,46 @@
+/* custom Bootstrap button with clemson colors */
+.btn-clemson {
+  color: #ffffff;
+  background-color: #522D80;
+  border-color: #400269;
+}
+
+.btn-clemson:hover,
+.btn-clemson:focus,
+.btn-clemson:active,
+.btn-clemson.active,
+.open .dropdown-toggle.btn-clemson {
+  color: #ffffff;
+  background-color: #6B44C7;
+  border-color: #400269;
+}
+
+.btn-clemson:active,
+.btn-clemson.active,
+.open .dropdown-toggle.btn-clemson {
+  background-image: none;
+}
+
+.btn-clemson.disabled,
+.btn-clemson[disabled],
+fieldset[disabled] .btn-clemson,
+.btn-clemson.disabled:hover,
+.btn-clemson[disabled]:hover,
+fieldset[disabled] .btn-clemson:hover,
+.btn-clemson.disabled:focus,
+.btn-clemson[disabled]:focus,
+fieldset[disabled] .btn-clemson:focus,
+.btn-clemson.disabled:active,
+.btn-clemson[disabled]:active,
+fieldset[disabled] .btn-clemson:active,
+.btn-clemson.disabled.active,
+.btn-clemson[disabled].active,
+fieldset[disabled] .btn-clemson.active {
+  background-color: #522D80;
+  border-color: #400269;
+}
+
+.btn-clemson .badge {
+  color: #522D80;
+  background-color: #ffffff;
+}
